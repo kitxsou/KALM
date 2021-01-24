@@ -1,0 +1,10 @@
+{
+  "name": "car_web",
+  "version": "1.0.0",
+  "description": "This is the KALM car web interface",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "Team KALM",
+  "license": "ISC"
+}

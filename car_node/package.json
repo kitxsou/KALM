@@ -1,0 +1,13 @@
+{
+  "name": "car_node",
+  "version": "1.0.0",
+  "description": "This is the KALM car server",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "autorestart": "npx nodemon src/main.js"
+  },
+  "keywords": [],
+  "author": "Team KALM",
+  "license": "ISC"
+}
