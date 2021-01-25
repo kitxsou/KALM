@@ -1,5 +1,4 @@
 const { RoutePoint } = require("./route_point");
-
 const { getGpsData, sendWithRadio } = require("./hardware");
 
 console.log("Running...");
@@ -24,8 +23,11 @@ function updateData() {
   sendWithRadio(data);
 }
 
-function getRoute() {
+function getRoute(startPoint, endPoint) {
   // calls rescue-track and extracts route points
+  const rescueTrackData = getRescueTrackData(startPoint, endPoint);
+
+  // returns array of route points
 }
 
 function getRescueTrackData(startPoint, endPoint) {
