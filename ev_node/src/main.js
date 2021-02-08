@@ -8,16 +8,18 @@ const destinationLocation = new RoutePoint(
   8.656861782073976
 );
 
-setInterval(updateData, 2000);
+setInterval(updateData, 2000); // updates data every 2s
 
 function updateData() {
   console.log("Refreshing...");
 
+  // creates data object with id and current location taken from gps module
   const data = {
     evId: id,
     currentLocation: getGpsData(),
   };
 
+  // gets route from current location to destination location
   data.route = getRoute(data.currentLocation, destinationLocation);
 
   sendWithRadio(data);
