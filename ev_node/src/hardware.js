@@ -46,6 +46,7 @@ function getGpsData() {
     parser.on("data", data => {
         gpsParser.update(data);
     }); 
+    
 }
 
 function sendWithRadio(data) {
