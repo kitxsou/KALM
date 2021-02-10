@@ -1,0 +1,29 @@
+Pakete:
+pigpio
+gps
+nrf24
+serialport
+request
+request-promise
+play-sound
+
+
+*********Tutorials/Hilfen*********
+p5 stuff:
+https://p5js.org/
+
+play-sound:
+npmjs.com/package/play-sound
+
+pigpio: 
+pigpio references
+npmjs.com/package/pigpio
+
+gps, serialport, request, request-promise:
+youtube.com/watch?v=iijfBeMTuWhU&ab_channel=HERETechnologies
+
+nrf24:
+pigpio references
+npmjs.com/package/nrf24
+nodejs.org/api/buffer.html
+tutorials-raspberrypi.de/funkkommunikation-zwischen-raspberry-pis-und-arduinos-2-4-ghz/

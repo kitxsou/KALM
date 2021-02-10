@@ -1,0 +1,50 @@
+{
+  "name": "nrf24",
+  "version": "0.1.7-beta",
+  "description": "nRF24 (nrf24l01/nrfl24l01+) radios in the nodejs way",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "./build_rf24libs.sh",
+    "install": "node-gyp rebuild",
+    "postinstall": "rm -rf rf24libs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ludiazv/node-nrf24.git"
+  },
+  "keywords": [
+    "network",
+    "RF24Gateway",
+    "RF24Mesh",
+    "RF24",
+    "nRF24",
+    "tmrh20",
+    "radio",
+    "mesh",
+    "wireless",
+    "gateway",
+    "nrf24l01",
+    "nrf24l01+",
+    "rpi",
+    "OrangePi",
+    "BeagleBone",
+    "BBB",
+    "RaspberryPi",
+    "raspberry"
+  ],
+  "author": "L Diaz",
+  "license": "MIT",
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "nan": "^2.14.0",
+    "nan-check": "0.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  }
+}
