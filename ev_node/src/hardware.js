@@ -8,8 +8,6 @@ function getGpsData() {
 
     const gpsAPI = require("gps"); // allows to parse the "raw" data coming from the gps
 
-    // const request = require("request-promise"); // so we can use promises?? Not using this here
-
     const port = new SerialPort("/dev/ttyS0", {baudRate: 9600}); // connects to the serial port the data is coming in
     const gpsParser = new gpsAPI(); // initialise gps Parser
 
