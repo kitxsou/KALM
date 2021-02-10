@@ -35,7 +35,7 @@ function getGpsData() {
                 longitudeShort = longitudeLong.toString().substring(0, 9);
                 routePoint.lon = longitudeShort;
                 
-                console.log(routePoint);
+                return routePoint;
             }
         }
     });
@@ -51,7 +51,53 @@ function sendWithRadio(data) {
   // sends the provided object as json via radio
 }
 
+function buttonPressed() {
+    // function for use of button
+    // if button is pressed, whole process on rv gets started
+    const Gpio = require('pigpio').Gpio; // initialise module to address gpio pins on the RPi
+
+    // Button at GPIO 17 
+    const button = new Gpio(17, {
+      mode: Gpio.INPUT, // listens for input (press of the button)
+      pullUpDown: Gpio.PUD_DOWN, // power is just running while button is actively pressed, sends signal
+      edge: Gpio.EITHER_EDGE // power is also recognized while rising or falling
+    });
+
+    // suggestion: if processRunning = true whole process is running, else it is stopped
+    let processRunning = false;
+
+    button.on('interrupt', (level) => {
+      if(processRunning) {
+          processRunning = false;
+      } else { 
+          processRunning = true;
+      }
+   
+      return processRunning;
+    });
+}
+
+function setColorOfLed(r,g,b) {
+    //color values are reversed (255 = dark, 0 = bright)
+        
+    const Gpio = require('pigpio').Gpio; // initialise module to address gpio pins on the RPi
+
+    // Each color of the LED has an own gpio pin
+    const redPin = new Gpio(16, {mode: Gpio.OUTPUT}); // Output: RPi sends signal to the pin
+    const greenPin = new Gpio(26, {mode: Gpio.OUTPUT});
+    const bluePin = new Gpio(6, {mode: Gpio.OUTPUT});
+    
+    // set Color of each pin
+    redPin.pwmWrite(r); // pwm is used to use values (0 to 255) other than just on and off (like digitalWrite) 
+    greenPin.pwmWrite(g);
+    bluePin.pwmWrite(b);
+    
+    // if LED should be shut down use 255 for each value. Otherwise LED will be on all the time (no matter if program is running or not)
+}
+
 module.exports = {
   getGpsData,
   sendWithRadio,
+  buttonPressed,
+  setColorOfLed
 };
