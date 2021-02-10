@@ -9,5 +9,19 @@
   },
   "keywords": [],
   "author": "Team KALM",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@serialport/parser-readline": "^9.0.1",
+    "express": "^4.17.1",
+    "gps": "^0.6.0",
+    "node-fetch": "^2.6.1",
+    "serialport": "^9.0.6",
+    "socket.io": "^3.1.1",
+    "uuid": "^8.3.2",
+    "nrf24": "^0.1.7-beta",
+    "pigpio": "^3.3.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "rf24": "0.0.0"
+  }
 }
