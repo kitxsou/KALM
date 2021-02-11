@@ -12,20 +12,33 @@ let phase = 1;
 /***********************/
 /*
  * polygon(
-   offSetX
-   offSetY     
-   Anmount of points
-   NoiseWidth,
-   Radius,
-   Speed
-   )
+  x,
+  y,
+  npoints,
+  noiseVal,
+  noiseMin,
+  noiseMax,
+  speed,
+  color1,
+  color2,
+  alpha)
+   *
+   *
+   * 
+   * 
+  polygons(
+  x,
+  y,
+  scale,
+  color1,
+  color2,
+  alpha)
  */
 /***********************/
 
 function draw() {
   clear();
-  // polygons(3, 100, 200);
-  polygons(3);
+  polygons(0, 0, 1, color(253, 112, 87), color(82, 70, 248), 200);
 }
 
 function getCircleSpread(x, y, npoints, noiseVal, noiseMin, noiseMax, speed) {
@@ -57,11 +70,14 @@ function polygon(
   noiseMax,
   speed,
   color1,
-  color2
+  color2,
+  rotation,
+  alpha
 ) {
   //die Mitte ist der Nullpunkt
   push();
   translate(width / 2, height / 2);
+  rotate(rotation);
   //ein Array aus Punkten auf einem Kreis
 
   let circleSpread = getCircleSpread(
@@ -76,7 +92,7 @@ function polygon(
 
   //Aus jedem neuen Punkt wird ein Vector gemacht und als vertex gezeichnet
   noStroke();
-  gradientColor(-noiseMax, 0, noiseMax, 0, color1, color2);
+  gradientColor(-noiseMax + x, 0, noiseMax + x, 0, color1, color2, alpha);
 
   beginShape();
   for (let i = 0; i <= circleSpread.length - 1; i++) {
@@ -88,9 +104,12 @@ function polygon(
   pop();
 }
 
-function gradientColor(x1, y1, x2, y2, color1, color2) {
+function gradientColor(x1, y1, x2, y2, color1, color2, alpha) {
   // linear gradient from start to end of line
   var grad = this.drawingContext.createLinearGradient(x1, y1, x2, y2);
+  color1.setAlpha(alpha);
+  color2.setAlpha(alpha);
+
   grad.addColorStop(0, color1);
   grad.addColorStop(1, color2);
 
@@ -99,28 +118,47 @@ function gradientColor(x1, y1, x2, y2, color1, color2) {
 
 let getRandomNumber = true;
 
-function polygons(anmount) {
-  let positions = [];
-
-  // while (getRandomNumber === true) {
-  //   for (let i = anmount; i > 0; i--) {
-  //     positions[i] = random(-100, 100);
-  //   }
-  //   getRandomNumber = false;
-  // }
-
-  // console.log(linearSpread);
-  for (let i = anmount; i > 0; i--) {
-    polygon(
-      0,
-      0,
-      100,
-      1,
-      i * 50,
-      i * 100,
-      i / 600,
-      color(83, 70, 248),
-      color(253, 111, 87)
-    );
-  }
+function polygons(x, y, scale, color1, color2, alpha) {
+  push();
+  translate(x, y);
+  polygon(
+    0,
+    0,
+    100,
+    1,
+    80 * scale,
+    120 * scale,
+    0.01,
+    color1,
+    color2,
+    0.9 * PI,
+    alpha
+  );
+  polygon(
+    30,
+    10,
+    100,
+    1,
+    50 * scale,
+    100 * scale,
+    0.01,
+    color1,
+    color2,
+    0.3 * PI,
+    alpha
+  );
+  polygon(
+    -20,
+    50,
+    100,
+    1,
+    30 * scale,
+    70 * scale,
+    0.01,
+    color1,
+    color2,
+    0.6 * PI,
+    alpha
+  );
+  pop();
 }
