@@ -38,7 +38,7 @@ let phase = 1;
 
 function draw() {
   clear();
-  polygons(0, 0, 1, color(253, 112, 87), color(82, 70, 248), 200);
+  polygons(0, 0, 1.2, color(253, 112, 87), color(82, 70, 248), 160);
 }
 
 function getCircleSpread(x, y, npoints, noiseVal, noiseMin, noiseMax, speed) {
@@ -49,7 +49,7 @@ function getCircleSpread(x, y, npoints, noiseVal, noiseMin, noiseMax, speed) {
   for (let a = 0; a < TWO_PI; a += angle) {
     let offX = map(cos(a), -1, 1, 0, noiseVal);
     let offY = map(sin(a + phase), -1, 1, 0, noiseVal);
-    r = map(noise(offX, offY, sin(phase)), 0, 1, noiseMin, noiseMax);
+    r = map(noise(offX, offY, sin(phase / 2)), 0, 1, noiseMin, noiseMax);
     let sx = x + cos(a) * r;
     let sy = y + sin(a) * r;
     let e = [sx, sy, offX, offY];
@@ -77,7 +77,6 @@ function polygon(
   //die Mitte ist der Nullpunkt
   push();
   translate(width / 2, height / 2);
-  rotate(rotation);
   //ein Array aus Punkten auf einem Kreis
 
   let circleSpread = getCircleSpread(
@@ -92,6 +91,8 @@ function polygon(
 
   //Aus jedem neuen Punkt wird ein Vector gemacht und als vertex gezeichnet
   noStroke();
+  rotate(rotation);
+
   gradientColor(-noiseMax + x, 0, noiseMax + x, 0, color1, color2, alpha);
 
   beginShape();
@@ -125,9 +126,9 @@ function polygons(x, y, scale, color1, color2, alpha) {
     0,
     0,
     100,
-    1,
-    80 * scale,
-    120 * scale,
+    0.5,
+    70 * scale,
+    100 * scale,
     0.01,
     color1,
     color2,
@@ -135,10 +136,10 @@ function polygons(x, y, scale, color1, color2, alpha) {
     alpha
   );
   polygon(
-    30,
-    10,
+    0,
+    0,
     100,
-    1,
+    0.6,
     50 * scale,
     100 * scale,
     0.01,
@@ -148,11 +149,11 @@ function polygons(x, y, scale, color1, color2, alpha) {
     alpha
   );
   polygon(
-    -20,
-    50,
+    0,
+    0,
     100,
-    1,
-    30 * scale,
+    2,
+    50 * scale,
     70 * scale,
     0.01,
     color1,
@@ -160,5 +161,4 @@ function polygons(x, y, scale, color1, color2, alpha) {
     0.6 * PI,
     alpha
   );
-  pop();
 }
