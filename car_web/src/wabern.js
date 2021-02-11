@@ -119,8 +119,8 @@ function polygons(anmount) {
       i * 50,
       i * 100,
       i / 600,
-      color(255, 0, 0),
-      color(0, 0, 255)
+      color(83, 70, 248),
+      color(253, 111, 87)
     );
   }
 }
