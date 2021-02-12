@@ -21,6 +21,9 @@ function updateStatus(data) {
   // Do nothing if the user has already confirmed this ev
   if (confirmedIds.includes(data.evId)) return;
 
+  // do nothing if current ev hasn't been confirmed
+  if (status && !confirmedIds.includes(status.evId)) return;
+
   // Do nothing if new id is same id as current status
   if (status && status.evId === data.evId) return;
 
@@ -44,5 +47,8 @@ app.post("/api/v1/confirm/:evId", function (req, res) {
 
   res.send();
 });
+
+// serves website of car web
+app.use("/", express.static("../car_web/src"));
 
 app.listen(3001);
