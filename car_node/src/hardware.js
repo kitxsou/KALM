@@ -1,8 +1,35 @@
 function activateAmbientEffects() {
   // should activate sound and lights
-  console.log("💫effects💫");
-  console.log("💫effects💫");
-  console.log("💫effects💫");
+  let val = 0;
+  let countUp = true;
+
+  //please add a path to a soundfile
+  playSound("./");
+
+  //as long as the button is not pressed, val is counting up or down
+  //we should also add a screenIsTouched function here
+  while (buttonPressed()) {
+    if (countUp === true) {
+      val++;
+      if (val >= 255) {
+        console.log("💫effects💫");
+        countUp = false;
+      } else {
+        val--;
+        if (val <= 10) {
+          console.log("💫effects💫");
+          countUp = true;
+        }
+      }
+    }
+    ledIsLit(val);
+    vibrationMotorIsVibrating(val);
+  }
+  if (buttonPressed() === false) {
+    val = 0;
+    ledIsLit(val);
+    vibrationMotorIsVibrating(val);
+  }
 }
 
 function getGpsData() {
@@ -81,7 +108,7 @@ function buttonPressed() {
   });
 }
 
-function ledIsShining(level) {
+function ledIsLit(level) {
   //color values are NOT reversed (255 = bright, 0 = dark)
   //this is because the led is a common anode instead of a common cathode led
 
@@ -124,7 +151,7 @@ function playSound(path) {
 module.exports = {
   getGpsData,
   buttonPressed,
-  ledIsShining,
+  ledIsLit,
   vibrationMotorIsVibrating,
   playSound,
   activateAmbientEffects,
