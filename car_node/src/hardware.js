@@ -4,7 +4,7 @@ function activateAmbientEffects() {
   let countUp = true;
 
   //please add a path to a soundfile
-  playSound("./");
+  playSound("./assets/notification.mp3");
 
   //as long as the button is not pressed, val is counting up or down
   //we should also add a screenIsTouched function here
