@@ -18,7 +18,7 @@ async function updateData() {
 
   // creates data object with id and current location taken from gps module
   const data = {
-    evId: id,
+    evId: evId,
     currentLocation: await getGpsData(),
   };
 

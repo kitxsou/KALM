@@ -1,8 +1,48 @@
 const { io } = require("socket.io-client");
-
+const { activateAmbientEffects } = require("./hardware");
+const express = require("express");
+const app = express();
 const client = io("http://localhost:3000");
+const { Status } = require("./status");
 
-client.on("data", (data) => {
+// The current status of the car
+let status;
+
+// The ids which the user has confirmed by pressing 'yes' on the screen
+const confirmedIds = [];
+
+// will be called every time ev_node sends data
+client.on("data", updateStatus);
+
+// Handles the data received from ev_node
+function updateStatus(data) {
   console.log("Received data:");
   console.log(data);
+  // Do nothing if the user has already confirmed this ev
+  if (confirmedIds.includes(data.evId)) return;
+
+  // Do nothing if new id is same id as current status
+  if (status && status.evId === data.evId) return;
+
+  status = new Status(
+    data.evId,
+    "Peter Sanitäter mag vorbei. Bitte fahr zur Seite"
+  );
+  activateAmbientEffects();
+}
+
+// Can be called to retrieve the current status of the car
+app.get("/api/v1/status", function (req, res) {
+  res.send(status);
 });
+
+// Will set the provided evId to confirmed
+app.post("/api/v1/confirm/:evId", function (req, res) {
+  const evId = req.params.evId;
+  confirmedIds.push(evId);
+  status = null;
+
+  res.send();
+});
+
+app.listen(3001);
