@@ -1,11 +1,11 @@
 const { RoutePoint } = require("./route_point");
 const { getGpsData, sendWithRadio, startRadio } = require("./hardware");
 const fetch = require("node-fetch");
-const { v4: uuidv4 } = require("uuid");
+const uuid = require("uuid");
 
 console.log("Running...");
 const id = generateId();
-// https://goo.gl/maps/9qMrHZfTZEYFB6L97
+// https://goo.gl/maps/9qMrHZfTZEYFB6L97 Kaufland Dieburg
 const destinationLocation = new RoutePoint(49.886545, 8.841271);
 
 startRadio();
@@ -36,6 +36,7 @@ async function getRoute(startPoint, endPoint) {
 
   const allRoutePoints = rescueTrackData.item1;
 
+  // takes first 3 route point from rescue-track item1 api
   return allRoutePoints.splice(0, 3);
 }
 
@@ -56,5 +57,5 @@ async function getRescueTrackData(startPoint, endPoint) {
 }
 
 function generateId() {
-  return uuidv4(); // create unique user id from uuid npm package
+  return uuid.v4(); // create unique user id from uuid npm package
 }
