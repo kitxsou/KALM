@@ -1,6 +1,7 @@
 let posA = [0, 0];
 let posB = [100, 100];
 
+//get the position of pointB compared to pointA (pointA is the center)
 function comparePoints(pointA, pointB) {
   let status;
   if (pointB[1] >= pointA[1]) {
