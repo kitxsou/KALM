@@ -32,8 +32,13 @@ let phase = 1;
   scale,
   color1,
   color2,
-  alpha)
+  alpha,
+  speed)
  */
+
+//INFO:
+//speed = 0.001 = slow
+//speed = 0.01 = fast
 /***********************/
 var sketchWidth;
 var sketchHeight;
@@ -64,7 +69,8 @@ function draw() {
     sketchHeight / 250,
     color(253, 112, 87),
     color(82, 70, 248),
-    160
+    160,
+    0.005
   );
 }
 
@@ -146,7 +152,7 @@ function gradientColor(x1, y1, x2, y2, color1, color2, alpha) {
 
 let getRandomNumber = true;
 
-function polygons(x, y, scale, color1, color2, alpha) {
+function polygons(x, y, scale, color1, color2, alpha, speed) {
   push();
   translate(x, y);
   polygon(
@@ -156,7 +162,7 @@ function polygons(x, y, scale, color1, color2, alpha) {
     0.5,
     70 * scale,
     100 * scale,
-    0.01,
+    speed,
     color1,
     color2,
     0.9 * PI,
@@ -169,7 +175,7 @@ function polygons(x, y, scale, color1, color2, alpha) {
     0.6,
     50 * scale,
     100 * scale,
-    0.01,
+    speed,
     color1,
     color2,
     0.3 * PI,
@@ -179,10 +185,10 @@ function polygons(x, y, scale, color1, color2, alpha) {
     0,
     0,
     100,
-    2,
+    1,
     50 * scale,
-    70 * scale,
-    0.01,
+    80 * scale,
+    speed,
     color1,
     color2,
     0.6 * PI,
