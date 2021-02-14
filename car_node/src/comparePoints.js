@@ -23,7 +23,6 @@ function comparePoints(pointA, pointB) {
   }
   return status;
 }
-console.log(calcAngle(posA, posB));
 
 module.exports = {
   comparePoints,
