@@ -2,29 +2,30 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Titel</title>
-	<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="Titel.css" />
-	<link rel="stylesheet" type="text/css" href="/style.css" />
-	<script id="applicationScript" type="text/javascript" src="Titel.js"></script>
-	<script type="text/javascript" src="/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  <script>
+    window.speed = 0.05;
+  </script>
+  <script src="/wabern.js"></script>
+  <script src="/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <style>
+    * {
+      margin: 0;
+    }
+
+    #sketch {
+      background-color: rgb(255, 0, 0);
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
 </head>
 
 <body>
-	<div id="Titel">
-		<svg class="Rectangle_1">
-			<rect id="Rectangle_1" rx="0" ry="0" x="0" y="0" width="800" height="480">
-			</rect>
-		</svg>
-		<img id="Mask_Group_1" src="Mask_Group_1.png" srcset="Mask_Group_1.png 1x">
-
-		</svg>
-		<div id="kalm">
-			<span>kalm</span>
-		</div>
-	</div>
+  <main>
+    <div id="sketch"></div>
+  </main>
 </body>
 
 </html>

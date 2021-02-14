@@ -42,7 +42,7 @@ let phase = 1;
 /***********************/
 var sketchWidth;
 var sketchHeight;
-
+const speed = window.speed;
 function setup() {
   sketchWidth = document.getElementById("sketch").offsetWidth;
   sketchHeight = document.getElementById("sketch").offsetHeight;
@@ -70,7 +70,7 @@ function draw() {
     color(253, 112, 87),
     color(82, 70, 248),
     160,
-    0.005
+    speed
   );
 }
 
