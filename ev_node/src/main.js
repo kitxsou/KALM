@@ -4,7 +4,8 @@ const fetch = require("node-fetch");
 const uuid = require("uuid");
 
 console.log("Running...");
-const id = generateId();
+const evId = generateId();
+const customMessage = "Wir müssen gleich an dir vorbei fahren!";
 // https://goo.gl/maps/9qMrHZfTZEYFB6L97 Kaufland Dieburg
 const destinationLocation = new RoutePoint(49.886545, 8.841271);
 
@@ -19,6 +20,7 @@ async function updateData() {
   // creates data object with id and current location taken from gps module
   const data = {
     evId: evId,
+    message: customMessage,
     currentLocation: await getGpsData(),
   };
 
