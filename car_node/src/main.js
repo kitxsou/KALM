@@ -27,10 +27,7 @@ function updateStatus(data) {
   // Do nothing if new id is same id as current status
   if (status && status.evId === data.evId) return;
 
-  status = new Status(
-    data.evId,
-    "Peter Sanitäter mag vorbei. Bitte fahr zur Seite"
-  );
+  status = new Status(data.evId, data.message);
   activateAmbientEffects();
 }
 
