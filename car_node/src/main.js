@@ -49,3 +49,4 @@ app.post("/api/v1/confirm/:evId", function (req, res) {
 app.use("/", express.static("../car_web/src"));
 
 app.listen(3001);
+console.log("listening on http://localhost:3001");

@@ -1,4 +1,10 @@
 function activateAmbientEffects() {
+  const isWindows = process.platform === "win32";
+  if (isWindows) {
+    console.log("💫effects💫");
+    return;
+  }
+
   // should activate sound and lights
   let val = 0;
   let countUp = true;
