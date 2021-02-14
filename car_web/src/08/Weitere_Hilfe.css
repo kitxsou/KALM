@@ -1,0 +1,253 @@
+.mediaViewInfo {
+	--web-view-name: Weitere Hilfe;
+	--web-view-id: Weitere_Hilfe;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: fit;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-center-vertically: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Weitere_Hilfe;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Weitere_Hilfe {
+	position: absolute;
+	width: 800px;
+	height: 480px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Weitere Hilfe;
+	--web-view-id: Weitere_Hilfe;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: fit;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-center-vertically: true;
+	--web-enable-deep-linking: true;
+}
+#Rectangle_1 {
+	fill: rgba(13,20,64,1);
+}
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 800px;
+	height: 480px;
+	left: 0px;
+	top: 0px;
+}
+#Group_96 {
+	position: absolute;
+	width: 875px;
+	height: 569px;
+	left: -37px;
+	top: -25px;
+	overflow: visible;
+}
+#Group_95 {
+	position: absolute;
+	width: 875px;
+	height: 569px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_94 {
+	position: absolute;
+	width: 875px;
+	height: 569px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_70 {
+	fill: rgba(13,20,64,1);
+}
+.Rectangle_70 {
+	position: absolute;
+	overflow: visible;
+	width: 765px;
+	height: 440px;
+	left: 17.5px;
+	top: 20px;
+}
+#Weitere_Hilfe_ {
+	left: 208.44px;
+	top: 42.313px;
+	position: absolute;
+	overflow: visible;
+	width: 487px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Franklin Gothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 70px;
+	color: rgba(255,255,255,1);
+}
+#Mask_Group_3 {
+	position: absolute;
+	width: 78.012px;
+	height: 79px;
+	left: 105.559px;
+	top: 42.313px;
+	overflow: visible;
+}
+#Group_313 {
+	position: absolute;
+	width: 165.331px;
+	height: 157.169px;
+	left: 98.744px;
+	top: 154.415px;
+	overflow: visible;
+}
+#Group_200 {
+	position: absolute;
+	width: 165.331px;
+	height: 157.169px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Artwork_6 {
+	position: absolute;
+	width: 165.331px;
+	height: 157.169px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_164 {
+	position: absolute;
+	width: 165.331px;
+	height: 157.17px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Icon_zocial-call {
+	fill: rgba(255,255,255,1);
+}
+.Icon_zocial-call {
+	overflow: visible;
+	position: absolute;
+	width: 66.322px;
+	height: 66.407px;
+	left: 49.504px;
+	top: 45.382px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Group_314 {
+	position: absolute;
+	width: 165.331px;
+	height: 157.169px;
+	left: 317.334px;
+	top: 154.416px;
+	overflow: visible;
+}
+#Artwork_6_ba {
+	position: absolute;
+	width: 165.331px;
+	height: 157.169px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_164_bb {
+	position: absolute;
+	width: 165.331px;
+	height: 157.17px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Icon_ionic-ios-text {
+	fill: rgba(255,255,255,1);
+}
+.Icon_ionic-ios-text {
+	overflow: visible;
+	position: absolute;
+	width: 71.974px;
+	height: 66.407px;
+	left: 46.162px;
+	top: 45.381px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Group_315 {
+	position: absolute;
+	width: 165.331px;
+	height: 157.169px;
+	left: 535.926px;
+	top: 154.415px;
+	overflow: visible;
+}
+#Artwork_6_be {
+	position: absolute;
+	width: 165.331px;
+	height: 157.169px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_164_bf {
+	position: absolute;
+	width: 165.331px;
+	height: 157.17px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Icon_material-info {
+	fill: rgba(255,255,255,1);
+}
+.Icon_material-info {
+	overflow: visible;
+	position: absolute;
+	width: 66.406px;
+	height: 66.407px;
+	left: 49.462px;
+	top: 45.381px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Group_316 {
+	position: absolute;
+	width: 588.881px;
+	height: 86.431px;
+	left: 105.559px;
+	top: 350.409px;
+	overflow: visible;
+}
+#Rectangle_145 {
+	fill: rgba(253,111,87,1);
+}
+.Rectangle_145 {
+	position: absolute;
+	overflow: visible;
+	width: 588.881px;
+	height: 86.431px;
+	left: 0px;
+	top: 0px;
+}
+#Nein_danke {
+	left: 50.844px;
+	top: 9.216px;
+	position: absolute;
+	overflow: visible;
+	width: 487px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Franklin Gothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(255,255,255,1);
+}

@@ -1,0 +1,139 @@
+.mediaViewInfo {
+	--web-view-name: Kalm Nachricht;
+	--web-view-id: Kalm_Nachricht;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: fit;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-center-vertically: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Kalm_Nachricht;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Kalm_Nachricht {
+	position: absolute;
+	width: 800px;
+	height: 480px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Kalm Nachricht;
+	--web-view-id: Kalm_Nachricht;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: fit;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-center-vertically: true;
+	--web-enable-deep-linking: true;
+}
+#Rectangle_1 {
+	fill: rgba(13,20,64,1);
+}
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 800px;
+	height: 480px;
+	left: 0px;
+	top: 0px;
+}
+#Group_96 {
+	position: absolute;
+	width: 875px;
+	height: 569px;
+	left: -37px;
+	top: -25px;
+	overflow: visible;
+}
+#Group_95 {
+	position: absolute;
+	width: 875px;
+	height: 569px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_94 {
+	position: absolute;
+	width: 875px;
+	height: 569px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_70 {
+	fill: rgba(13,20,64,1);
+}
+.Rectangle_70 {
+	position: absolute;
+	overflow: visible;
+	width: 765px;
+	height: 440px;
+	left: 17.5px;
+	top: 20px;
+}
+#__ {
+	left: 648px;
+	top: 165px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	line-height: 612px;
+	margin-top: -191px;
+	text-align: left;
+	font-family: Franklin Gothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 230px;
+	color: rgba(253,111,87,1);
+	letter-spacing: 0.5px;
+}
+#_ {
+	left: 80px;
+	top: 162px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	line-height: 612px;
+	margin-top: -191px;
+	text-align: left;
+	font-family: Franklin Gothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 230px;
+	color: rgba(253,111,87,1);
+	letter-spacing: 0.5px;
+}
+#Bitte_hilf_Peter_indem_du_eine {
+	left: 197px;
+	top: 178px;
+	position: absolute;
+	overflow: visible;
+	width: 407px;
+	line-height: 65px;
+	margin-top: -7.5px;
+	text-align: center;
+	font-family: Franklin Gothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	color: rgba(255,255,255,1);
+}
+#Mask_Group_2 {
+	position: absolute;
+	width: 110px;
+	height: 110px;
+	left: 345px;
+	top: 38px;
+	overflow: visible;
+}

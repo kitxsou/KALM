@@ -1,0 +1,268 @@
+.mediaViewInfo {
+  --web-view-name: Rettungsgasse Anleitung – 1;
+  --web-view-id: Rettungsgasse_Anleitung__1;
+  --web-scale-to-fit: true;
+  --web-scale-to-fit-type: fit;
+  --web-enable-scale-up: true;
+  --web-scale-on-resize: true;
+  --web-center-horizontally: true;
+  --web-center-vertically: true;
+  --web-enable-deep-linking: true;
+}
+:root {
+  --web-view-ids: Rettungsgasse_Anleitung__1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+#Rettungsgasse_Anleitung__1 {
+  position: absolute;
+  width: 800px;
+  height: 480px;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+  --web-view-name: Rettungsgasse Anleitung – 1;
+  --web-view-id: Rettungsgasse_Anleitung__1;
+  --web-scale-to-fit: true;
+  --web-scale-to-fit-type: fit;
+  --web-enable-scale-up: true;
+  --web-scale-on-resize: true;
+  --web-center-horizontally: true;
+  --web-center-vertically: true;
+  --web-enable-deep-linking: true;
+}
+#Rectangle_1 {
+  fill: rgba(13, 20, 64, 1);
+}
+.Rectangle_1 {
+  position: absolute;
+  overflow: visible;
+  width: 800px;
+  height: 480px;
+  left: 0px;
+  top: 0px;
+}
+#Group_96 {
+  position: absolute;
+  width: 865px;
+  height: 563px;
+  left: -32px;
+  top: -22px;
+  overflow: visible;
+}
+#Group_95 {
+  position: absolute;
+  width: 865px;
+  height: 563px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+#Group_94 {
+  position: absolute;
+  width: 865px;
+  height: 563px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+#Rectangle_70 {
+  fill: rgba(13, 20, 64, 1);
+}
+.Rectangle_70 {
+  position: absolute;
+  overflow: visible;
+  width: 765px;
+  height: 440px;
+  left: 17.5px;
+  top: 20px;
+}
+#__ {
+  left: 668.29px;
+  top: 143.5px;
+  position: absolute;
+  overflow: visible;
+  width: 65px;
+  white-space: nowrap;
+  line-height: 607px;
+  margin-top: -188.5px;
+  text-align: left;
+  font-family: Franklin Gothic;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 230px;
+  color: rgba(253, 111, 87, 1);
+  letter-spacing: 0.5px;
+}
+#_ {
+  left: 57.71px;
+  top: 143.5px;
+  position: absolute;
+  overflow: visible;
+  width: 65px;
+  white-space: nowrap;
+  line-height: 607px;
+  margin-top: -188.5px;
+  text-align: left;
+  font-family: Franklin Gothic;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 230px;
+  color: rgba(253, 111, 87, 1);
+  letter-spacing: 0.5px;
+}
+#Rectangle_166 {
+  fill: rgba(255, 255, 255, 1);
+}
+.Rectangle_166 {
+  position: absolute;
+  overflow: visible;
+  width: 108.751px;
+  height: 163.126px;
+  left: 244.396px;
+  top: 250.508px;
+}
+#Rectangle_167 {
+  fill: rgba(255, 255, 255, 1);
+}
+.Rectangle_167 {
+  position: absolute;
+  overflow: visible;
+  width: 108.751px;
+  height: 163.126px;
+  left: 446.854px;
+  top: 250.508px;
+}
+#Path_44 {
+  fill: transparent;
+  stroke: rgba(253, 111, 87, 1);
+  stroke-width: 10px;
+  stroke-linejoin: miter;
+  stroke-linecap: round;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Path_44 {
+  overflow: visible;
+  position: absolute;
+  width: 45.709px;
+  height: 47.749px;
+  left: 284.698px;
+  top: 168.038px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+#Path_45 {
+  fill: transparent;
+  stroke: rgba(253, 111, 87, 1);
+  stroke-width: 11px;
+  stroke-linejoin: miter;
+  stroke-linecap: round;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Path_45 {
+  overflow: visible;
+  position: absolute;
+  width: 47.696px;
+  height: 48.749px;
+  left: 480.476px;
+  top: 168.038px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+#Polygon_4 {
+  fill: rgba(253, 111, 87, 1);
+  stroke: rgba(253, 111, 87, 1);
+  stroke-width: 5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Polygon_4 {
+  overflow: visible;
+  position: absolute;
+  width: 52.011px;
+  height: 34.28px;
+  transform: matrix(1, 0, 0, 1, 249.0147, 148.2593) rotate(-90deg);
+  transform-origin: center;
+  left: 0px;
+  top: 0px;
+}
+#Polygon_5 {
+  fill: rgba(253, 111, 87, 1);
+  stroke: rgba(253, 111, 87, 1);
+  stroke-width: 5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Polygon_5 {
+  overflow: visible;
+  position: absolute;
+  width: 53.473px;
+  height: 35.092px;
+  transform: matrix(1, 0, 0, 1, 499.9576, 147.9859) rotate(90deg);
+  transform-origin: center;
+  left: 0px;
+  top: 0px;
+}
+#Path_64 {
+  fill: rgba(0, 0, 0, 0);
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 25px;
+  stroke-linejoin: miter;
+  stroke-linecap: round;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Path_64 {
+  overflow: visible;
+  position: absolute;
+  width: 25px;
+  height: 389.73px;
+  left: 197.795px;
+  top: 60.649px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+#Path_65 {
+  fill: rgba(0, 0, 0, 0);
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 25px;
+  stroke-linejoin: miter;
+  stroke-linecap: round;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Path_65 {
+  overflow: visible;
+  position: absolute;
+  width: 25px;
+  height: 389.73px;
+  left: 621.325px;
+  top: 57.635px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+#Path_37 {
+  fill: rgba(0, 0, 0, 0);
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 15px;
+  stroke-linejoin: miter;
+  stroke-linecap: round;
+  stroke-dasharray: 20 30;
+  stroke-dashoffset: 0;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Path_37 {
+  overflow: visible;
+  position: absolute;
+  width: 15px;
+  height: 397.536px;
+  left: 399.888px;
+  top: 57.635px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
