@@ -35,10 +35,37 @@ let phase = 1;
   alpha)
  */
 /***********************/
+var sketchWidth;
+var sketchHeight;
+
+function setup() {
+  sketchWidth = document.getElementById("sketch").offsetWidth;
+  sketchHeight = document.getElementById("sketch").offsetHeight;
+  let renderer = createCanvas(sketchWidth, sketchHeight);
+  renderer.parent("sketch");
+}
+
+function windowResized() {
+  sketchWidth = document.getElementById("sketch").offsetWidth;
+  sketchHeight = document.getElementById("sketch").offsetHeight;
+  resizeCanvas(sketchWidth, sketchHeight);
+}
+
+function draw() {
+  background(0, 0, 255);
+}
 
 function draw() {
   clear();
-  polygons(0, 0, 1.2, color(253, 112, 87), color(82, 70, 248), 160);
+  background(15, 15, 50);
+  polygons(
+    0,
+    0,
+    sketchHeight / 250,
+    color(253, 112, 87),
+    color(82, 70, 248),
+    160
+  );
 }
 
 function getCircleSpread(x, y, npoints, noiseVal, noiseMin, noiseMax, speed) {
