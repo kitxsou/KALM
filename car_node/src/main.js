@@ -2,7 +2,7 @@ const { io } = require("socket.io-client");
 const { activateAmbientEffects } = require("./hardware");
 const express = require("express");
 const app = express();
-const client = io("http://localhost:3000");
+const client = io("http://192.168.178.46:3000");
 const { Status } = require("./status");
 
 // The current status of the car
