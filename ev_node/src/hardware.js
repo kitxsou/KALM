@@ -36,7 +36,7 @@ function sendWithRadio(data) {
 function getGpsData() {
   // Cannot use gps module if running on windows
   const isWindows = process.platform === "win32";
-  if (isWindows) {
+  if (true) {
     return new RoutePoint(49.886545, 8.841271);
   }
 
