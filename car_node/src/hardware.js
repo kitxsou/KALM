@@ -1,38 +1,48 @@
 function activateAmbientEffects() {
- 
+  console.log("Entering activateAmbientEffects()")
   const isWindows = process.platform === "win32";
-  if (true) {
-    console.log("💫effects💫");
-    return;
-  }
+  //if (true) {
+  //  console.log("💫effects💫");
+  //  return;
+  //}
 
   // should activate sound and lights
-  let val = 0;
-  let countUp = true;
+  let val = 0; //starting value
+  let countUp = true; //starting value
 
   //please add a path to a soundfile
-  playSound("./assets/notification.mp3");
+  //playSound("./assets/notification.mp3");
 
   //as long as the button is not pressed, val is counting up or down
   //we should also add a screenIsTouched function here
-  while (buttonPressed()) {
+  let frequency = 10000;
+  let i = 0; 
+  console.log("ButtonPressed: " + buttonPressed());
+  //while (buttonPressed()===false) {
+  while (i < 3) { // LED blinks 3 times
     if (countUp === true) {
       val++;
-      if (val >= 255) {
-        console.log("💫effects💫");
+      //console.log("💫fading in💫" + val);
+      if (val >= 255*frequency) {
         countUp = false;
-      } else {
-        val--;
-        if (val <= 10) {
-          console.log("💫effects💫");
-          countUp = true;
-        }
+      }
+    } else {
+      val--;
+      //console.log("💫fading out💫" + val);
+      if (val <= 1) {
+        countUp = true;
+        i++;
       }
     }
-    ledIsLit(val);
-    vibrationMotorIsVibrating(val);
+
+    ledIsLit(Math.round(val/frequency));
+    if(val%frequency === 0){ 
+      //vibrationMotorIsVibrating(val/frequency);
+    }
   }
-  if (buttonPressed() === false) {
+
+  if (true) {
+    console.log("turning light off")
     val = 0;
     ledIsLit(val);
     vibrationMotorIsVibrating(val);
