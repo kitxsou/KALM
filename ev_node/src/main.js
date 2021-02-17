@@ -1,5 +1,5 @@
 const { RoutePoint } = require("./route_point");
-const { getGpsData, sendWithRadio, startRadio, setColorOfLed } = require("./hardware");
+const { getGpsData, sendWithRadio, startRadio, setColorOfLed, buttonPressed } = require("./hardware");
 const fetch = require("node-fetch");
 const uuid = require("uuid");
 

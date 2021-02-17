@@ -99,22 +99,20 @@ function buttonPressed() {
   // Button at GPIO 17
   const button = new Gpio(17, {
     mode: Gpio.INPUT, // listens for input (press of the button)
-    pullUpDown: Gpio.PUD_DOWN, // power is just running while button is actively pressed, sends signal
-    edge: Gpio.EITHER_EDGE, // power is also recognized while rising or falling
+    pullUpDown: Gpio.PUD_OFF, // 
+    edge: Gpio.EITHER_EDGE, // power is recognized while rising (button release)
   });
 
-  // suggestion: if processRunning = true whole process is running, else it is stopped
-  let processRunning = false;
+    let processRunning = -1;
 
-  button.on("interrupt", (level) => {
-    if (processRunning) {
-      processRunning = false;
-    } else {
-      processRunning = true;
-    }
-
-    return processRunning;
-  });
+    button.on("interrupt", (level) => {
+      processRunning = -1 * processRunning;
+      if(processRunning > 0){
+          resolve("Off");
+      }else{
+          resolve("On");
+      }
+    });
 }
 
 function setColorOfLed(r, g, b) {
