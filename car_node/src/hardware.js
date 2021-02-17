@@ -1,52 +1,49 @@
 function activateAmbientEffects() {
-  console.log("Entering activateAmbientEffects()")
+  console.log("Entering activateAmbientEffects()");
   const isWindows = process.platform === "win32";
   //if (true) {
   //  console.log("💫effects💫");
   //  return;
   //}
 
-  // should activate sound and lights
-  let val = 0; //starting value
-  let countUp = true; //starting value
+  let counter = 0;
+  let val = 0;
+  let countingUp = true;
 
   //please add a path to a soundfile
-  //playSound("./assets/notification.mp3");
+  playSound("./assets/notification.mp3");
+//Do While ist wie While, nur der Inhalt der Funktion wird mindestens einmal durchgespielt
+do {
+  if (countingUp === true) {
+    val++;
+    //console.log("💫fading in💫" + val);
+    //hohe Zahl, damit das Pulsieren länger anhält
 
-  //as long as the button is not pressed, val is counting up or down
-  //we should also add a screenIsTouched function here
-  let frequency = 10000;
-  let i = 0; 
-  console.log("ButtonPressed: " + buttonPressed());
-  //while (buttonPressed()===false) {
-  while (i < 3) { // LED blinks 3 times
-    if (countUp === true) {
-      val++;
-      //console.log("💫fading in💫" + val);
-      if (val >= 255*frequency) {
-        countUp = false;
-      }
-    } else {
-      val--;
-      //console.log("💫fading out💫" + val);
-      if (val <= 1) {
-        countUp = true;
-        i++;
-      }
+    if (val >= 25500) {
+      countingUp = false;
     }
-
-    ledIsLit(Math.round(val/frequency));
-    if(val%frequency === 0){ 
-      //vibrationMotorIsVibrating(val/frequency);
+  } else {
+    val--;
+    //console.log("💫fading out💫" + val);
+    if (val <= 1000) {
+      countingUp = true;
+      counter++;
     }
   }
-
-  if (true) {
-    console.log("turning light off")
-    val = 0;
-    ledIsLit(val);
-    vibrationMotorIsVibrating(val);
+  //da die LED und der Button einen integer wollen, wird die Zahl nach oben gerundet.
+  nVal = Math.ceil(val / 100);
+  //console.log(nVal);
+  //LED und vibrationMotor werden aktiviert
+  ledIsLit(nVal);
+  //falls der Vibrationsmotor immernoch nicht pulsieren will, schreibe hier einfach eine Zahl rein. Ansonsten habe ich unten noch eine Alternative
+  vibrationMotorIsVibrating(nVal);
+  //wenn der Button gedrückt wird, wird das hier ausgegeben
+  if (counter === 5) {
+    console.log("finished");
+    ledIsLit(0);
   }
+  //Solange der Button nicht gedrückt wird, wird die Schleife ausgeführt.
+} while (counter <= 5);
 }
 
 function getGpsData() {
@@ -143,8 +140,25 @@ function vibrationMotorIsVibrating(level) {
 
   const vibrationMotor = new Gpio(27, { mode: Gpio.INPUT }); // Output: RPi sends signal to the pin
 
+    //Ein Array mit Zahlen zwischen 0 und 60 in zweierschritten
+    let arr = [];
+    for (let i = 0; i <= 60; i = i + 2) {
+      arr.push(i);
+    }
+    let l1 = level;
+    let l2;
+    let d = new Date();
+    let s = d.getSeconds();
+    //alle zwei Sekunden wird der level ausgegeben (das mit l1 und l2
+    //funktioniert leider irgendwie nicht. Mein Plan war es, dass der console log nur bei einer neuen Zahl ausgeführt wird.
+    //vielleicht funktioniert es auch so?)
+    if (arr.includes(s) && l2 !== l1) {
+      console.log("VibrationMotor: " + level);
+      vibrationMotor.pwmWrite(level); // pwm is used to use values (0 to 255) other than just on and off (like digitalWrite)
+    }
+    l2 = level;
   //set the strength of the vibration (0 - 255) 0 = off
-  vibrationMotor.pwmWrite(level); // pwm is used to use values (0 to 255) other than just on and off (like digitalWrite)
+ 
   // if vibrationMotor should be shut down use 0 for level. Otherwise it will run all the time (no matter if program is running or not)
 }
 
