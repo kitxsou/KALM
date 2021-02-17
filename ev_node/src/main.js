@@ -1,5 +1,5 @@
 const { RoutePoint } = require("./route_point");
-const { getGpsData, sendWithRadio, startRadio } = require("./hardware");
+const { getGpsData, sendWithRadio, startRadio, setColorOfLed } = require("./hardware");
 const fetch = require("node-fetch");
 const uuid = require("uuid");
 
@@ -14,8 +14,10 @@ startRadio();
 // updates data every 10s
 setInterval(() => updateData().catch(console.error), 10 * 1000);
 
+
 async function updateData() {
   console.log("Refreshing...");
+  setColorOfLed(255, 0, 255); // green light while data is send
 
   // creates data object with id and current location taken from gps module
   const data = {
@@ -28,6 +30,7 @@ async function updateData() {
   data.route = await getRoute(data.currentLocation, destinationLocation);
 
   sendWithRadio(data);
+  setColorOfLed(0, 120, 255); // orange light while waiting for update of data
 }
 
 // calls rescue-track and extracts route points
