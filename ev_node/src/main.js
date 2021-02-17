@@ -1,5 +1,5 @@
 const { RoutePoint } = require("./route_point");
-const { getGpsData, sendWithRadio, startRadio, setColorOfLed, buttonPressed } = require("./hardware");
+const { getGpsData, sendWithRadio, startRadio, setColorOfLed } = require("./hardware");
 const fetch = require("node-fetch");
 const uuid = require("uuid");
 
@@ -11,8 +11,42 @@ const destinationLocation = new RoutePoint(49.886545, 8.841271);
 
 startRadio();
 
-// updates data every 10s
-setInterval(() => updateData().catch(console.error), 10 * 1000);
+
+
+
+
+
+// BUTTON
+let updateInterval;
+
+ // function for use of button
+  // if button is pressed, whole process on rv gets started
+  const Gpio = require("pigpio").Gpio; // initialise module to address gpio pins on the RPi
+
+  // Button at GPIO 17
+  const button = new Gpio(17, {
+    mode: Gpio.INPUT, // listens for input (press of the button)
+    pullUpDown: Gpio.PUD_OFF,
+    edge: Gpio.RISING_EDGE, // power is recognized while rising (button press)
+  });
+
+return new Promise((resolve, reject) => {
+    let processRunning = -1;
+
+    button.on("interrupt", (level) => {
+      processRunning = -1 * processRunning;
+      if(processRunning > 0){
+        console.log("Off");
+        determineIfOnOrOff = "Off";
+        clearInterval(updateInterval);
+      }else{
+        console.log("On");
+        determineIfOnOrOff = "On";
+        // if button is on "On", the code stars sending data
+        updateInterval =  setInterval(() => updateData().catch(console.error), 10 * 1000);
+      }
+    });
+});
 
 
 async function updateData() {
@@ -32,6 +66,7 @@ async function updateData() {
   sendWithRadio(data);
   setColorOfLed(0, 120, 255); // orange light while waiting for update of data
 }
+
 
 // calls rescue-track and extracts route points
 // returns array of route points
